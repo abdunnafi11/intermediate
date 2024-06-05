@@ -64,12 +64,10 @@ class HomeActivity : AppCompatActivity(), StoryAdapter.OnItemClickAdapter {
         }
         viewModel.apply {
             setLoadingState(true)
-            viewModel.quote.observe(this@HomeActivity, {
+            viewModel.getStory(auth).observe(this@HomeActivity, {
                 setLoadingState(false)
-
                 storyAdapter.submitData(lifecycle, it)
                 binding.swipeRefresh.isRefreshing = false
-
             })
 
             setLoadingState(false)

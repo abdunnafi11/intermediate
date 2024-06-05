@@ -15,9 +15,7 @@ class HomeViewModel constructor (private val dataRepository: DataRepository): Vi
 
     var quote: LiveData<PagingData<ListStory>> = MutableLiveData()
 
-    fun getStory(auth: String) {
-        quote = dataRepository.getQuote(auth).cachedIn(viewModelScope)
-    }
+    fun getStory(auth: String) = dataRepository.getQuote(auth).cachedIn(viewModelScope)
     private var job: Job? = null
     override fun onCleared() {
         super.onCleared()

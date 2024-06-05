@@ -39,8 +39,6 @@ class HomeActivity : AppCompatActivity(), StoryAdapter.OnItemClickAdapter {
         viewModel = ViewModelProvider(this, ViewModelFactory(dataRepository))[HomeViewModel::class.java]
         fetchData(prefsManager.token)
 
-        viewModel.getStory(prefsManager.token)
-
         binding.swipeRefresh.setOnRefreshListener {
             binding.swipeRefresh.isRefreshing = true
             fetchData(prefsManager.token)

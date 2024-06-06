@@ -8,7 +8,6 @@ import kotlinx.coroutines.Job
 
 class HomeViewModel constructor (private val dataRepository: DataRepository): ViewModel() {
 
-
     fun getStory(auth: String) = dataRepository.getQuote(auth).cachedIn(viewModelScope)
     private var job: Job? = null
     override fun onCleared() {

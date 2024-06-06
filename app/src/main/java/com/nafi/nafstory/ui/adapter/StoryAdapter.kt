@@ -51,7 +51,7 @@ class StoryAdapter(private val context: Context, private val clickListener: OnIt
     }
 
     companion object {
-        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ListStory>() {
+             val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ListStory>() {
             override fun areItemsTheSame(oldItem: ListStory, newItem: ListStory): Boolean {
                 return oldItem == newItem
             }

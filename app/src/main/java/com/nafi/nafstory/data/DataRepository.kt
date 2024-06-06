@@ -83,7 +83,7 @@ class DataRepository(private val apiService: ApiService) {
         ).liveData
     }
 
-        fun generateAuthorization(token: String): String {
+    private fun generateAuthorization(token: String): String {
         return "Bearer $token"
     }
 }

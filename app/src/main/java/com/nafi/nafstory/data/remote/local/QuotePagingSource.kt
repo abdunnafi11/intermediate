@@ -15,7 +15,7 @@ class QuotePagingSource(private val apiService: ApiService,private val auth:Stri
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ListStory> {
         return try {
             val page = params.key ?: INITIAL_PAGE_INDEX
-            val responseData = apiService.getStories("Bearer $auth",page, params.loadSize)
+            val responseData = apiService.getStories("Bearer $auth", location = 0, page = page, size = params.loadSize)
 
             Log.d("TAG", "load: $responseData")
             LoadResult.Page(

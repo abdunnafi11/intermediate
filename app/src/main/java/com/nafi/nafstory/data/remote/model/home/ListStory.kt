@@ -1,10 +1,12 @@
 package com.nafi.nafstory.data.remote.model.home
 
 import android.os.Parcelable
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
+@Entity(tableName = "story")
 data class ListStory(
     @field:SerializedName("id")
     val id: String,

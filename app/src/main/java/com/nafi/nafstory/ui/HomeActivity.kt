@@ -49,6 +49,8 @@ class HomeActivity : AppCompatActivity(), StoryAdapter.OnItemClickAdapter {
             fetchData(prefsManager.token)
         }
 
+        viewModel.getStory(prefsManager.token)
+
         binding.fabAddStory.setOnClickListener {
             startActivity(Intent(this, AddStoryActivity::class.java))
         }
